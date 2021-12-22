@@ -4,6 +4,7 @@ opencv-python-headless
 matplotlib==3.3.3
 Pillow==8.1.1
 streamlit-webcam-example==0.1.0
+webrtc_streamer
 scipy
 htbuilder
 Pillow
