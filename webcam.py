@@ -1,12 +1,12 @@
-from webcam import webcam
+# from webcam import webcam
 import streamlit as st
 
+### Excluding Imports ###
+st.title("Upload + Classification Example")
 
-source = st.sidebar.selectbox( "Image Source? ", ('Test Image', 'Upload', 'Webcam') )
-if source == 'Webcam':
-    captured_image = webcam()
-    
-if captured_image is None:
-    st.write("Waiting for image...")
-else:
-    st.write("Got an image from the {}:".format(source.lower()))
+uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Uploaded Image.', use_column_width=True)
+    st.write("")
+    st.write("Classifying...")
