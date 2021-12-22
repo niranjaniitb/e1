@@ -8,5 +8,5 @@ if ip_image is not None:
   image = Image.open(ip_image)
 
   st.write("-your imput image-")
-  st.image(image,caption="--your input image--")
+  st.image(image,use_column_width=True)
 #-----
