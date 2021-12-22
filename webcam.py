@@ -1,5 +1,6 @@
 # from webcam import webcam
 import streamlit as st
+from PIL import Image
 
 ### Excluding Imports ###
 st.title("Upload + Classification Example")
