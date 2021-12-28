@@ -4,7 +4,7 @@ import streamlit as st
 st.title("Webcam Application")
 run = st.checkbox('Run')
 FRAME_WINDOW = st.image([])
-cam = cv2.VideoCapture(1)
+cam = cv2.VideoCapture(0)
 st.write("---captured images---")
 while run:
     ret, frame = cam.read()
