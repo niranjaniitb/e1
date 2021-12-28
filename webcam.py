@@ -9,6 +9,9 @@ st.write("---captured images---")
 while run:
     ret, frame = cam.read()
     st.write("---read images---")
+    FRAME_WINDOW.image(frame)
+    st.write("---showed images---")
+    
     
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     FRAME_WINDOW.image(frame)
