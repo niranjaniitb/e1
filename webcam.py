@@ -1,14 +1,14 @@
 import cv2
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
+import streamlit as st
 
+st.title("Webcam Application")
+run = st.checkbox('Run')
+FRAME_WINDOW = st.image([])
+cam = cv2.VideoCapture(0)
 
-class VideoTransformer(VideoTransformerBase):
-    def transform(self, frame):
-        img = frame.to_ndarray(format="bgr24")
-
-        img = cv2.cvtColor(cv2.Canny(img, 100, 200), cv2.COLOR_GRAY2BGR)
-
-        return img
-
-
-webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
+while run:
+    ret, frame = cam.read()
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    FRAME_WINDOW.image(frame)
+else:
+    st.write('Stopped')
