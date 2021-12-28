@@ -8,8 +8,8 @@ cam = cv2.VideoCapture(0)
 st.write("---captured images---")
 while run:
     ret, frame = cam.read()
-    st.write("---read images---")
-    FRAME_WINDOW.image(frame)
+    st.write("---read images---", type(ret), type(frame))
+#     FRAME_WINDOW.image(frame)
     st.write("---showed images---")
     
     
