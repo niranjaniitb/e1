@@ -5,7 +5,7 @@ st.title("Webcam Application")
 run = st.checkbox('Run')
 FRAME_WINDOW = st.image([])
 cam = cv2.VideoCapture(0)
-st.write("---captured images---")
+st.write("---captured images---", cam)
 while run:
     ret, frame = cam.read()
     st.write("---read images---", type(ret), type(frame), ret)
